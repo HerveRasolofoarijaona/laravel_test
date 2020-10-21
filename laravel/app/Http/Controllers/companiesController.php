@@ -25,7 +25,7 @@ class companiesController extends Controller
      */
     public function create()
     {
-        //
+        return view('companies.index');
     }
 
     /**
@@ -36,7 +36,10 @@ class companiesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Mail::to('admin@admin.com')
+            ->send(new Companiees($request->except('_token')));
+ 
+        return view('confirm');
     }
 
     /**
