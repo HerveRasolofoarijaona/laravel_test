@@ -13,7 +13,9 @@ class companiesController extends Controller
      */
     public function index()
     {
-        //
+        $companies = DB::table('companies')->paginate(10);
+
+        return view('companies.index', ['companies' => $companies]);
     }
 
     /**

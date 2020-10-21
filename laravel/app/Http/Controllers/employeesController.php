@@ -13,7 +13,9 @@ class employeesController extends Controller
      */
     public function index()
     {
-        //
+        $employees = DB::table('employees')->paginate(10);
+
+        return view('employees.index', ['employees' => $employees]);
     }
 
     /**
