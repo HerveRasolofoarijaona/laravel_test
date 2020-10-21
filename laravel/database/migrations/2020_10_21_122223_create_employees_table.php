@@ -18,6 +18,8 @@ class CreateEmployeesTable extends Migration
 			$table->string('FirstName', 255);
 			$table->string('LastName', 255);
 			$table->foreign('id')->references('id')->on('companies');
+			$table->string('email', 255);
+			$table->decimal('phone', 20);			
             $table->timestamps();
         });
     }
