@@ -20,3 +20,14 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('home', 'home')->name('home');
 });
+
+
+Route::get('companies', [
+    'uses' => 'companiesController@index',
+    'as' => 'companies-list'
+]);
+
+Route::get('employees', [
+    'uses' => 'employeesController@index',
+    'as' => 'employees-list'
+]);

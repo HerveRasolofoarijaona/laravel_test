@@ -15,6 +15,18 @@ class employeesController extends Controller
     {
         $employees = DB::table('employees')->paginate(10);
 
+        if ($request->ajax()) {
+        
+            return Datatables::of($data)
+                ->addIndexColumn()
+                ->addColumn('action', function($row){
+                    $btn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+
         return view('employees.index', ['employees' => $employees]);
     }
 

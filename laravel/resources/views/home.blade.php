@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <!-- <div class="container">
         @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}
@@ -25,5 +25,5 @@
                 <a class="btn btn-primary" href="" target="_blank" role="button">Github Source Code</a>
             </p>
         </div>
-    </div>
+    </div> -->
 @endsection
